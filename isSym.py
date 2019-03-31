@@ -1,4 +1,4 @@
-from myTree import Tree
+from myds import Tree
 def isSymmetrical(pRoot):
         # write code here
         if not pRoot:

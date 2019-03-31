@@ -1,9 +1,4 @@
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-
+from myds import TreeNode
 def reConstructBinaryTree(pre, tin): 
     if len(pre) == 0:return None
     cur = pre[0]

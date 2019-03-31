@@ -1,4 +1,4 @@
-from myTree import Tree,TreeNode
+from myds import Tree,TreeNode
 
 test = Tree([8,7,6,3,4,5,6])
 

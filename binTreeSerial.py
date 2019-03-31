@@ -1,4 +1,4 @@
-from myTree import TreeNode
+from myds import TreeNode
 def Serialize(root):
     if not root:return '#'
     else: 

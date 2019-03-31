@@ -1,8 +1,4 @@
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
+from myds import TreeNode
 
 a = TreeNode(1)
 b = TreeNode(2)
