@@ -34,7 +34,7 @@ class ListNode:
         self.val = val
         self.next = None
 
-class List:
+class MyList:
     def __init__(self, values):
         if not isinstance(values,list) or len(values) == 0:
             self.root = None

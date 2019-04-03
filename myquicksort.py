@@ -21,10 +21,9 @@ def HoarePartition(A):
     while lo < hi:
         while A[lo] <= p: lo += 1
         while A[hi] >= p: hi -= 1
-        print(A[lo],A[hi])
         A[lo],A[hi] = A[hi],A[lo]
     A[lo],A[hi] = A[hi],A[lo]
-    A[1],A[hi] = A[hi],A[1]
+    A[0],A[hi] = A[hi],A[0]
     return hi
 
 def QuickSelect(k,A):

@@ -1,44 +1,24 @@
-class ListNode:
-    def __init__(self,val):
-        self.val = val
-        self.next = None
-def traverse(node):
-    while node:
-        print(node.val)
-        node = node.next
+from myds import ListNode,MyList
 
-def deleteDuplication(pHead):
+class Solution:
+    def deleteDuplication(self, pHead):
         # write code here
-        pre = ListNode(0)
-        pre = pHead
-        nxt = pHead.next
-        ctn = False
-        while nxt:
-            if nxt.val == pHead.val:
-                print(nxt.val,pHead.val)
-                ctn = True
+        if pHead is None or pHead.next is None:
+            return pHead
+        head1 = pHead.next
+        if head1.val != pHead.val:
+            pHead.next = self.deleteDuplication(pHead.next)
+        else:
+            while pHead.val == head1.val and head1.next is not None:
+                head1 = head1.next
+            if head1.val != pHead.val:
+                pHead = self.deleteDuplication(head1)
             else:
-                
-                pHead.next = nxt
-                ctn = False
-                pHead = nxt
-            nxt = nxt.next
-        if ctn: pHead.next.next = None
-        return pre
+                return None
+        return pHead
 
-a = ListNode(1)
-b = ListNode(2)
-c = ListNode(3)
-d = ListNode(3)
-e = ListNode(4)
-f = ListNode(4)
-g = ListNode(5)
+s = Solution()
+test = MyList([1,2,2,3,3,4,5])
+print(s.deleteDuplication(test.root))
 
-a.next = b
-b.next = c
-c.next = d
-d.next = e
-e.next = f
-f.next = g
 
-print(traverse(deleteDuplication(a)))
