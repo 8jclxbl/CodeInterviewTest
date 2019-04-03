@@ -8,7 +8,7 @@ class Solution:
         # write code here
         if not m or not n:
             return -1
-        res = range(n)
+        res = list(range(n))
         i = 0
         while len(res)>1:
             i = (m+i-1)%len(res)
