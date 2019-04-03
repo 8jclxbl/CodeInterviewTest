@@ -40,6 +40,20 @@ class Bst:
         self.root = None
         self.treeHeight = self.height(self.root)
 
+    def getMax(self,root):
+        if not root: return None
+        if root.right:
+            return self.getMax(root.right)
+        else:
+            return root
+
+    def getMin(self,root):
+        if not root: return None
+        if root.left:
+            return self.getMin(root.left)
+        else:
+            return root
+
     #结算结点高度
     def height(self,root):
         if not root:

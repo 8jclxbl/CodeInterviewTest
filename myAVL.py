@@ -1,4 +1,4 @@
-from BST import Bst,TreeNode,DupValueError,NoSuchNodeError
+from myBST import Bst,TreeNode,DupValueError,NoSuchNodeError
 
 class AvlNode(TreeNode):
     def __init__(self, val):
@@ -124,10 +124,11 @@ class AVL(Bst):
         self.addAsRight(b,c)
         self.height(self.root)
 
-  
+"""  
 test = [5,6,7,8,9,1,2,3,4]
 avl = AVL()
 avl.genFromList(test)
 avl.priorTravers(avl.root)
 avl.delete(4)
 avl.priorTravers(avl.root)
+"""
