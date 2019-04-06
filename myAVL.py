@@ -124,11 +124,9 @@ class AVL(Bst):
         self.addAsRight(b,c)
         self.height(self.root)
 
-"""  
-test = [5,6,7,8,9,1,2,3,4]
+
+test = [10,30,65,50,90,40]
 avl = AVL()
 avl.genFromList(test)
 avl.priorTravers(avl.root)
-avl.delete(4)
-avl.priorTravers(avl.root)
-"""
+print(avl.root.height)

@@ -202,11 +202,12 @@ class Bst:
             return p
 
 
-"""
-test = [4,2,1,3,6,5,8,7,9]
+"""test = [10,30,65,50,90,40]
 bst = Bst()
 bst.genFromList(test)
 #bst.priorTravers(bst.root)
-bst.delete(8)
+#bst.delete(8)
 bst.priorTravers(bst.root)
+print(bst.root.height)
+
 """
