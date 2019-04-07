@@ -1,7 +1,6 @@
 class TreeNode:
     def __init__(self, val):
         self.val = val
-        self.parent = None
         self.left = None
         self.right = None
 
@@ -11,6 +10,12 @@ class Tree:
         self.Nodes = []
         self.genTreeFromList(values)
         self.Root = self.Nodes[0]
+
+    def num_nodes(self, root):
+        if root:
+            return 1 + self.num_nodes(root.left) + self.num_nodes(root.right)
+        else:
+            return 0
     
     def genTreeFromList(self,values):
         for i in range(self.numNodes):
