@@ -34,7 +34,9 @@ def QuickSelect(k,A):
     else:
         return QuickSelect(k-s-1,A[s+1:])
 
-A = [3,1,2,4,5,6]
+if __name__ == "__main__":
+
+    A = [3,1,2,4,5,6]
 #print(LomutiPartition(A))
-print(HoarePartition(A))
+    print(HoarePartition(A))
 #print(QuickSelect(6,A))
