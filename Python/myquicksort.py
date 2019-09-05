@@ -19,10 +19,11 @@ def HoarePartition(A):
     hi = length - 1
 
     while lo < hi:
-        while A[lo] <= p: lo += 1
-        while A[hi] >= p: hi -= 1
+        while A[lo] <= p and hi >= lo: lo += 1
+        while A[hi] >= p and hi >= lo: hi -= 1
         A[lo],A[hi] = A[hi],A[lo]
     A[lo],A[hi] = A[hi],A[lo]
+    print(A,hi)
     A[0],A[hi] = A[hi],A[0]
     return hi
 
@@ -34,9 +35,20 @@ def QuickSelect(k,A):
     else:
         return QuickSelect(k-s-1,A[s+1:])
 
+def QuickSort(A):
+    if len(A) <= 1:
+        return A
+    else:
+        p = LomutiPartition(A)
+        return QuickSort(A[0:p]) + [A[p]] + QuickSort(A[p+1:])
+
+
 if __name__ == "__main__":
 
     A = [3,1,2,4,5,6]
-#print(LomutiPartition(A))
-    print(HoarePartition(A))
-#print(QuickSelect(6,A))
+    #print(LomutiPartition(A))
+    #print(HoarePartition(A))
+    print(A)
+    #print(QuickSelect(5,A))
+
+    print(QuickSort(A))
